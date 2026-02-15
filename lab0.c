@@ -7,20 +7,20 @@
 
 int main()
 {
-    const int szz = 10;    
+    const int szz = 10;
     // array[szz] Заменил на array[10], также можно было написать //#define szz 10
 
-        int array[10] = {5,5,7,3,3,2,2,1,1,10};
-        int max = array[0];
-        for(int i=1;i < szz;i++)
-            if(array[i] > max) max = array[i];
-        bool unique = true;
-        int notExist = max+1;
-        int countEl=0;
-        for(int i=0;i < szz;i++)
-        {
-                int jx = i+1;
-        if(array[i]!= notExist)
+    int array[10] = {5,5,7,3,3,2,2,1,1,10};
+    int max = array[0];
+    for(int i=1;i < szz;i++)
+        if(array[i] > max) max = array[i];
+    bool unique = true;
+    int notExist = max+1;
+    int countEl=0;
+    for(int i=0;i < szz;i++)
+    {
+        int jx = i+1;
+        if (array[i]!= notExist)
         {
             unique = true;
             while(jx < szz)
@@ -31,19 +31,19 @@ int main()
                     {
                         array[jx] = notExist;
 
-                    }            
+                    }
                 }
                 jx++;
             }
-                    }       
-                else
-                    unique = false;
-                if(unique)
-                    countEl++;
-                else
-        array[i] = notExist;      
-            }    
-        
-        printf("countEl = %d", countEl);
+        }
+        else
+            unique = false;
+        if(unique)
+            countEl++;
+        else
+            array[i] = notExist;
+    }
+
+    printf("countEl = %d", countEl);
 }
 
